@@ -44,8 +44,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="AutoMapper.cs" />
+    <Compile Include="JsonMapping.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Transformation\ITransform.cs" />
+    <Compile Include="Transformation\JsonTransformation.cs" />
+    <Compile Include="Transformation\SignleValueTransform.cs" />
+    <Compile Include="Transformation\TranformationFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
