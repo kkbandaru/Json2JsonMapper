@@ -10,7 +10,7 @@ namespace Json2JsonMapper.UnitTest
     public class FlatMapping
     {
         [TestMethod]
-        public void TestMethod1()
+        public void FlatMappingUnitTest()
         {
             StreamReader re = new StreamReader(@"FlatMapping\FlatMapping.json");
             StreamReader re1 = new StreamReader(@"FlatMapping\FlatMappingInput.json");

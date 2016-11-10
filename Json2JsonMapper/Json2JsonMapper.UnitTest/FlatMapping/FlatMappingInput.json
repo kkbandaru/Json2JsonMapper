@@ -1,4 +1,6 @@
 ﻿{
   "firstName": "Krishna Kishore",
-  "lastName" :  "Bandaru"
+  "lastName": "Bandaru",
+  "age": 20,
+  "height": 5.10
 }

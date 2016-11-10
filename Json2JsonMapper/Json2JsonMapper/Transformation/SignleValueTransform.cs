@@ -16,7 +16,32 @@ namespace Json2JsonMapper.Transformation
         }
         public void Transform(JObject input, ref JObject output)
         {
-            output[_mapping.DestPropertyName] = input[_mapping.SourcePropertyName];
+            JToken value;
+            if (_mapping.SourcePropertyName.StartsWith("$"))
+            {
+                value = input.SelectToken(_mapping.SourcePropertyName);
+            }
+            else
+            {
+                value = input[_mapping.SourcePropertyName];
+            }
+
+            if (_mapping.DataType == "string")
+            {
+                output[_mapping.DestPropertyName] = value.Value<string>(); 
+            }
+            else if (_mapping.DataType == "int")
+            {
+                output[_mapping.DestPropertyName] = value.Value<int>(); ;
+            }
+            else if (_mapping.DataType == "decimal")
+            {
+                output[_mapping.DestPropertyName] = value.Value<decimal>(); ;
+            }
+            else
+            {
+                output[_mapping.DestPropertyName] = value;
+            }
         }
     }
 }

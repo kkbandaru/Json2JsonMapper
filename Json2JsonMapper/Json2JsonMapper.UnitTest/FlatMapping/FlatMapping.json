@@ -2,7 +2,7 @@
   "name" : "FlatMapping",
   "mappings": [
     {
-      "sourcePropertyName": "firstName",
+      "sourcePropertyName": "$.firstName",
       "destPropertyName": "first",
       "dataType": "string",
       "type": "single"
@@ -11,6 +11,18 @@
       "sourcePropertyName": "lastName",
       "destPropertyName": "last",
       "dataType": "string",
+      "type": "single"
+    },
+    {
+      "sourcePropertyName": "age",
+      "destPropertyName": "currentAge",
+      "dataType": "int",
+      "type": "single"
+    },
+    {
+      "sourcePropertyName": "height",
+      "destPropertyName": "myheight",
+      "dataType": "decimal",
       "type": "single"
     }
   ]
