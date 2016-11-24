@@ -49,8 +49,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Transformation\ITransform.cs" />
     <Compile Include="Transformation\JsonTransformation.cs" />
+    <Compile Include="Transformation\CollectionTransformation.cs" />
     <Compile Include="Transformation\SignleValueTransform.cs" />
     <Compile Include="Transformation\TranformationFactory.cs" />
+    <Compile Include="Transformation\TransformationFuncs.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

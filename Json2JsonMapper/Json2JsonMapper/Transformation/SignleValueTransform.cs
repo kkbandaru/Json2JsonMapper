@@ -26,17 +26,21 @@ namespace Json2JsonMapper.Transformation
                 value = input[_mapping.SourcePropertyName];
             }
 
-            if (_mapping.DataType == "string")
+            if (_mapping.DataType.ToLower() == "string")
             {
-                output[_mapping.DestPropertyName] = value.Value<string>(); 
+                output[_mapping.DestPropertyName] =  value.Value<string>(); 
             }
-            else if (_mapping.DataType == "int")
+            else if (_mapping.DataType.ToLower() == "int")
             {
-                output[_mapping.DestPropertyName] = value.Value<int>(); ;
+                output[_mapping.DestPropertyName] = value.Value<int>(); 
             }
-            else if (_mapping.DataType == "decimal")
+            else if (_mapping.DataType.ToLower() == "decimal")
             {
-                output[_mapping.DestPropertyName] = value.Value<decimal>(); ;
+                output[_mapping.DestPropertyName] = value.Value<decimal>(); 
+            }
+            else if (_mapping.DataType.ToLower() == "bool")
+            {
+                output[_mapping.DestPropertyName] =  value.Value<bool>() ;
             }
             else
             {

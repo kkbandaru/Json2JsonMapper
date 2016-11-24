@@ -12,6 +12,7 @@ namespace Json2JsonMapper.UnitTest
         [TestMethod]
         public void FlatMappingUnitTest()
         {
+            string exceptedOutput = "{\r\n  \"first\": \"Krishna Kishore\",\r\n  \"last\": \"Bandaru\",\r\n  \"currentAge\": 20,\r\n  \"myheight\": 5.1\r\n}";
             StreamReader re = new StreamReader(@"FlatMapping\FlatMapping.json");
             StreamReader re1 = new StreamReader(@"FlatMapping\FlatMappingInput.json");
             JObject mapping = new JObject();
@@ -33,6 +34,8 @@ namespace Json2JsonMapper.UnitTest
 
             JObject ouput = mapper.Transform(mappingInput);
 
+
+            Assert.AreEqual<string>(exceptedOutput, ouput.ToString());
         }
     }
 }

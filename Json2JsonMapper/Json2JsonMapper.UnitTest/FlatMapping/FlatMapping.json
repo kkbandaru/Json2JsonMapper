@@ -24,6 +24,12 @@
       "destPropertyName": "myheight",
       "dataType": "decimal",
       "type": "single"
+    },
+    {
+      "sourcePropertyName": "height",
+      "destPropertyName": "myheight",
+      "dataType": "decimal",
+      "type": "single"
     }
   ]
 

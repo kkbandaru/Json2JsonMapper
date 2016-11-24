@@ -1,0 +1,47 @@
+﻿{
+  "firstName": "Krishna Kishore",
+  "lastName": "Bandaru",
+  "age": 20,
+  "height": 5.10,
+
+  "address": [
+    {
+      "addressLine1": "FirstLine1",
+      "addressLine2": "FirstLine2",
+      "phone": "8175111122345",
+      "landline": "near by apprt4",
+      "city": "Hyderabad",
+      "state": "Telengana",
+      "country": "India",
+      "pinCode": "589001",
+      "isReal": true,
+      "isNo": 12345
+
+    },
+    {
+      "addressLine1": "FirstLine3",
+      "addressLine2": "FirstLine4",
+      "phone": "917511112456",
+      "landline": "near by apprt1",
+      "city": "Chennai",
+      "state": "TamilNadu",
+      "country": "India",
+      "pinCode": "589001",
+      "isReal": true,
+      "isNo": 12345
+    },
+    {
+      "addressLine1": "FirstLine5",
+      "addressLine2": "FirstLine6",
+      "phone": "7175111123567",
+      "landline": "near by apprt6",
+      "city": "Bangalore",
+      "state": "Karnataka",
+      "country": "India",
+      "pinCode": "589001",
+      "isNo": 12345,
+      "isReal": true
+    }
+
+  ]
+}

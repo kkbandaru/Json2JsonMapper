@@ -21,5 +21,7 @@ namespace Json2JsonMapper
         public string DataType { get; set; }
 
         public string Type { get; set; }
+
+        public List<Mapping> Mappings { get; set; }
     }
 }

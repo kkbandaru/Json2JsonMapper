@@ -49,13 +49,16 @@
     </When>
     <Otherwise>
       <ItemGroup>
-        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework">
+          <Private>False</Private>
+        </Reference>
       </ItemGroup>
     </Otherwise>
   </Choose>
   <ItemGroup>
     <Compile Include="FlatMapping\FlatMappingUnitTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Collection\CollectionUnitTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="FlatMapping\FlatMapping.json">
@@ -72,6 +75,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Collection\CollectionsInput.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Collection\CollectionsMapping.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <Choose>

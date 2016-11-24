@@ -10,9 +10,13 @@ namespace Json2JsonMapper.Transformation
     {
         public static ITransform GetTransforamtion(string type,Mapping mapping)
         {
-            if(type.ToUpper()=="single".ToUpper())
+            if(type.ToLower()=="single".ToLower())
             {
                 return new SignleValueTransform(mapping);
+            }
+            else if (type.ToLower() == "collection".ToLower())
+            {
+                return new CollectionTransform(mapping);
             }
             else
             {

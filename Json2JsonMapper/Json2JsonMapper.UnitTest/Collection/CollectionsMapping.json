@@ -1,0 +1,113 @@
+﻿{
+  "name": "FlatMapping",
+  "mappings": [
+    {
+      "sourcePropertyName": "$.firstName",
+      "destPropertyName": "first",
+      "dataType": "string",
+      "type": "single"
+    },
+    {
+      "sourcePropertyName": "lastName",
+      "destPropertyName": "last",
+      "dataType": "string",
+      "type": "single"
+    },
+    {
+      "sourcePropertyName": "age",
+      "destPropertyName": "currentAge",
+      "dataType": "int",
+      "type": "single"
+    },
+    {
+      "sourcePropertyName": "height",
+      "destPropertyName": "myheight",
+      "dataType": "decimal",
+      "type": "single"
+    },
+    {
+      "sourcePropertyName": "height",
+      "destPropertyName": "myheight",
+      "dataType": "decimal",
+      "type": "single"
+    },
+    {
+      "sourcePropertyName": "$.address.[*]",
+      "destPropertyName": "myaddress",
+      "type": "collection",
+      "mappings": [
+        {
+          "sourcePropertyName": "$.addressLine1",
+          "destPropertyName": "myaddressLine1",
+          "dataType": "string",
+          "type": "single"
+        },
+        {
+          "sourcePropertyName": "$.addressLine2",
+          "destPropertyName": "myaddressLine2",
+          "dataType": "string",
+          "type": "single"
+        },
+        {
+          "sourcePropertyName": "$.phone",
+          "destPropertyName": "myphone",
+          "dataType": "string",
+          "type": "single"
+        },
+        {
+          "sourcePropertyName": "$.landline",
+          "destPropertyName": "mylandline",
+          "dataType": "string",
+          "type": "single"
+        },
+        {
+          "sourcePropertyName": "$.city",
+          "destPropertyName": "mycity",
+          "dataType": "string",
+          "type": "single"
+        },
+        {
+          "sourcePropertyName": "$.state",
+          "destPropertyName": "mystate",
+          "dataType": "string",
+          "type": "single"
+        },
+        {
+          "sourcePropertyName": "$.country",
+          "destPropertyName": "mycountry",
+          "dataType": "string",
+          "type": "single"
+        },
+        {
+          "sourcePropertyName": "$.pinCode",
+          "destPropertyName": "mypincode",
+          "dataType": "string",
+          "type": "single"
+        },
+        {
+          "sourcePropertyName": "$.isReal",
+          "destPropertyName": "isReal",
+          "dataType": "bool",
+          "type": "single"
+        },
+        {
+          "sourcePropertyName": "$.isReal",
+          "destPropertyName": "ismyReal",
+          "dataType": "string",
+          "type": "single"
+        },
+        {
+          "sourcePropertyName": "$.isNo",
+          "destPropertyName": "isNo",
+          "dataType": "string",
+          "type": "single"
+        }
+
+      ]
+
+    }
+
+
+  ]
+
+}
