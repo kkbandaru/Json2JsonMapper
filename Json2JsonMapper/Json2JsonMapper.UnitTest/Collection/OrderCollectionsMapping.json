@@ -1,0 +1,81 @@
+﻿{
+  "name": "FlatMapping",
+  "mappings": [
+    {
+      "sourcePropertyName": "$.customerId",
+      "destPropertyName": "customerId",
+      "dataType": "string",
+      "type": "single"
+    },
+    {
+      "sourcePropertyName": "$.customerName",
+      "destPropertyName": "customerName",
+      "dataType": "string",
+      "type": "single"
+    },
+    {
+      "sourcePropertyName": "$.orders.[*]",
+      "destPropertyName": "myorders",
+      "type": "collection",
+      "mappings": [
+        {
+          "sourcePropertyName": "$.orderAt",
+          "destPropertyName": "myorderAt",
+          "dataType": "string",
+          "type": "single"
+        },
+        {
+          "sourcePropertyName": "$.orderId",
+          "destPropertyName": "myorderId",
+          "dataType": "string",
+          "type": "single"
+        },
+        {
+          "sourcePropertyName": "$.items.[*]",
+          "destPropertyName": "myordersitems",
+          "type": "collection",
+          "mappings": [
+            {
+              "sourcePropertyName": "$.itemId",
+              "destPropertyName": "myitemId",
+              "dataType": "string",
+              "type": "single"
+            },
+            {
+              "sourcePropertyName": "$.itemDescription",
+              "destPropertyName": "myorderId",
+              "dataType": "string",
+              "type": "single"
+            },
+            {
+              "sourcePropertyName": "$.quantity",
+              "destPropertyName": "myquantity",
+              "dataType": "double",
+              "type": "single"
+            },
+            {
+              "sourcePropertyName": "$.totalItemCost",
+              "destPropertyName": "mytotalItemCost",
+              "dataType": "double",
+              "type": "single"
+            },
+            {
+              "sourcePropertyName": "$.itemCost",
+              "destPropertyName": "myitemCost",
+              "dataType": "double",
+              "type": "single"
+            }
+
+          ]
+
+        }
+
+
+      ]
+
+    }
+
+
+  ]
+
+}

@@ -1,0 +1,72 @@
+﻿{
+  "customerId": "1234567890",
+  "customerName": "Krishna Kishore",
+
+  "orders": [
+    {
+
+      "orderAt": "2012-04-21T18:25:43-05:00",
+      "orderId": "0000001-00001",
+      "items": [
+        {
+          "itemId": "00001",
+          "itemDescription": "Item Descrption 1",
+          "quantity": 4,
+          "itemCost": 200,
+          "totalItemCost": 800
+        },
+        {
+          "itemId": "00002",
+          "itemDescription": "Item Descrption 2",
+          "quantity": 3,
+          "itemCost": 210,
+          "totalItemCost": 630
+        }
+      ]
+    },
+    {
+     
+      "orderAt": "2012-04-21T18:25:43-05:00",
+      "orderId": "0000001-00002",
+      "items": [
+        {
+          "itemId": "00003",
+          "itemDescription": "Item Descrption 3",
+          "quantity": 4,
+          "itemCost": "200",
+          "totalItemCost": 800
+        },
+        {
+          "itemId": "00004",
+          "itemDescription": "Item Descrption 4",
+          "quantity": 3,
+          "itemCost": 210,
+          "totalItemCost": 630
+        }
+      ]
+    },
+    {
+      
+      "orderAt": "2012-04-21T18:25:43-05:00",
+      "orderId": "0000001-00003",
+      "items": [
+        {
+          "itemId": "00001",
+          "itemDescription": "Item Descrption 1",
+          "quantity": 2,
+          "itemCost": 200,
+          "totalItemCost": 400
+        },
+        {
+          "itemId": "00002",
+          "itemDescription": "Item Descrption 2",
+          "quantity": 2,
+          "itemCost": 210,
+          "totalItemCost": 420
+        }
+      ]
+    }
+
+
+  ]
+}

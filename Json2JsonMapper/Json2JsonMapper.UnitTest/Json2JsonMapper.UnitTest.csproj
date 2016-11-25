@@ -75,7 +75,13 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Collection\OrderCollectionsInput.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Collection\CollectionsInput.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Collection\OrderCollectionsMapping.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Collection\CollectionsMapping.json">
