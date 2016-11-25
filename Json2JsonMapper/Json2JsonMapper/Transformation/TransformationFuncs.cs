@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,11 +9,15 @@ namespace Json2JsonMapper.Transformation
 {
     public class TransformationFuncs
     {
-        public static object ApplyFunction(string funcName, string[] param)        
+        public static string ApplyFunction(string funcName,JObject doc)        
         {
-            if (funcName.ToLower() == "Concat".ToLower())
+            if (funcName.ToLower().StartsWith("@Concat".ToLower()))
             {
-                return concate(param);
+               
+
+                List<string> parmeters = resolveParameters(doc, retriveParameters(funcName));
+
+                return concate(parmeters);
             }
             else
             {
@@ -21,9 +26,49 @@ namespace Json2JsonMapper.Transformation
                         
         }
 
-        private static string concate(string[] param)
+        private static string concate(List<string> param)
         {
-            return null;
+
+            StringBuilder builder = new StringBuilder();
+            foreach (String s in param)
+            {
+                builder.Append(s);
+            }
+            return builder.ToString();
+        }
+
+        public static string retriveParameters(string JPathstr)
+        {
+            int startIndex = JPathstr.IndexOf('(');
+            int endIndex = JPathstr.IndexOf(')');
+
+            int strlen = JPathstr.Length;
+
+            return JPathstr.Substring(startIndex + 1, strlen - startIndex - 2);
+        }
+
+        public static List<string> resolveParameters(JObject input ,string JPathstr)
+        {
+            string[] JsonPath = JPathstr.Split(',');
+
+            List<string> outputstr = new List<string>();
+
+            foreach(string str in JsonPath)
+            {
+                if(str.StartsWith("$"))
+                {
+                    JToken ouput = input.SelectToken(str);
+                    outputstr.Add(ouput.Value<string>());
+                }
+                else
+                {
+                    outputstr.Add(str);
+                }
+                
+            }
+            return outputstr;
+       
+
         }
 
  

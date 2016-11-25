@@ -20,32 +20,39 @@ namespace Json2JsonMapper.Transformation
             if (_mapping.SourcePropertyName.StartsWith("$"))
             {
                 value = input.SelectToken(_mapping.SourcePropertyName);
+                if (_mapping.DataType.ToLower() == "string")
+                {
+                    output[_mapping.DestPropertyName] = value.Value<string>();
+                }
+                else if (_mapping.DataType.ToLower() == "int")
+                {
+                    output[_mapping.DestPropertyName] = value.Value<int>();
+                }
+                else if (_mapping.DataType.ToLower() == "decimal")
+                {
+                    output[_mapping.DestPropertyName] = value.Value<decimal>();
+                }
+                else if (_mapping.DataType.ToLower() == "bool")
+                {
+                    output[_mapping.DestPropertyName] = value.Value<bool>();
+                }
+                else
+                {
+                    output[_mapping.DestPropertyName] = value;
+                }
+            }
+            else if (_mapping.SourcePropertyName.StartsWith("@"))
+            {
+                string transformedValue = TransformationFuncs.ApplyFunction(_mapping.SourcePropertyName, input);
+                output[_mapping.DestPropertyName] = transformedValue;
             }
             else
             {
                 value = input[_mapping.SourcePropertyName];
-            }
-
-            if (_mapping.DataType.ToLower() == "string")
-            {
-                output[_mapping.DestPropertyName] =  value.Value<string>(); 
-            }
-            else if (_mapping.DataType.ToLower() == "int")
-            {
-                output[_mapping.DestPropertyName] = value.Value<int>(); 
-            }
-            else if (_mapping.DataType.ToLower() == "decimal")
-            {
-                output[_mapping.DestPropertyName] = value.Value<decimal>(); 
-            }
-            else if (_mapping.DataType.ToLower() == "bool")
-            {
-                output[_mapping.DestPropertyName] =  value.Value<bool>() ;
-            }
-            else
-            {
                 output[_mapping.DestPropertyName] = value;
             }
+
+            
         }
     }
 }
